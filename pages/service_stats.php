@@ -18,7 +18,7 @@
 </head>
 
 <body>
-
+  
   <div class="col-2 position-fixed d-flex flex-column justify-content-between" style="background-color: #f6f6f6; height: 100vh">
     <div>
       <img src="../assets/logo.png" class="img-fluid ml-5" style="width: 60%" />
