@@ -78,7 +78,7 @@
   </div>
   <div class="col-10" style="margin-left: 18%;">
     <div class="row">
-      <div class="d-flex justify-content-end align-items-center me-5 px-5">
+      <div class="d-flex justify-content-end align-items-center me-5 px-5 pt-3">
         <div class="d-flex me-2 w-25" role="search">
           <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" />
           <button class="btn btn-outline-gray" type="submit">
