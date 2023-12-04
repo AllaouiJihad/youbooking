@@ -34,7 +34,7 @@
             <div class="accordion-body">
               <ul class="list-unstyled">
                 <li><a class="dropdown-item my-4" href="#">Action</a></li>
-                <li><a class="dropdown-item my-4" href="#">Another action</a></li>
+                <li><a class="dropdown-item my-4" href="#">Another</a></li>
               </ul>
             </div>
           </div>
