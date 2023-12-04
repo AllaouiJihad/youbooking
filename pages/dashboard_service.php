@@ -97,6 +97,62 @@
         </div>
       </div>
     </div>
+    <div class="row">
+      <div class="col-md-5">
+        <div class="h-100 p-5 bg-light border rounded-3">
+          <h2>NEW FEATURE</h2>
+          <p>Put your contacts into Groups to access to anyone wery easily</p>
+          <button class="btn btn-outline-secondary" type="button">MY GROUPS</button>
+        </div>
+      </div>
+      <div class="col-md-6 card p-0">
+        <img src="../assets/card-res.jpg" class="card-img">
+        <div class="card-img-overlay text-white " style="margin-top: 100px;">
+          <h5 class="card-title display-6" style="text-shadow: 1px 1px 2px #000000;">Card title</h5>
+          <p class="card-text" style="text-shadow: 2px 2px 3px #000000;">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+          <p class="card-text" style="text-shadow: 2px 2px 3px #000000;"><small>Last updated 3 mins ago</small></p>
+        </div>
+      </div>
+    </div>
+
+    <div class="container my-4">
+
+      <h3>CURRENT RESERVATIONS</h3>
+
+      <?php
+      ?>
+      <table class="table table-hover">
+        <thead>
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">First</th>
+            <th scope="col">Last</th>
+            <th scope="col">Handle</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row">1</th>
+            <td>Mark</td>
+            <td>Otto</td>
+            <td>@mdo</td>
+          </tr>
+          <tr>
+            <th scope="row">2</th>
+            <td>Jacob</td>
+            <td>Thornton</td>
+            <td>@fat</td>
+          </tr>
+          <tr>
+            <th scope="row">3</th>
+            <td colspan="2">Larry the Bird</td>
+            <td>@twitter</td>
+          </tr>
+        </tbody>
+      </table>
+
+
+    </div>
   </div>
 
 
