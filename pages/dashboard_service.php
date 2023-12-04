@@ -18,7 +18,7 @@
 </head>
 
 <body>
-  
+
   <div class="col-2 position-fixed d-flex flex-column justify-content-between" style="background-color: #f6f6f6; height: 100vh">
     <div>
       <img src="../assets/logo.png" class="img-fluid ml-5" style="width: 60%" />
@@ -27,14 +27,15 @@
         <div class="accordion-item">
           <h2 class="accordion-header">
             <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne" style="background-color: #f6f6f6;">
-              HOME
+              RESERVATIONS
             </button>
           </h2>
           <div id="flush-collapseOne" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
             <div class="accordion-body">
-              Placeholder content for this accordion, which is intended to
-              demonstrate the <code>.accordion-flush</code> class. This is the
-              first item's accordion body.
+              <ul class="list-unstyled">
+                <li><a class="dropdown-item my-4" href="#">Action</a></li>
+                <li><a class="dropdown-item my-4" href="#">Another action</a></li>
+              </ul>
             </div>
           </div>
         </div>
@@ -46,27 +47,25 @@
           </h2>
           <div id="flush-collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
             <div class="accordion-body">
-              Placeholder content for this accordion, which is intended to
-              demonstrate the <code>.accordion-flush</code> class. This is the
-              second item's accordion body. Let's imagine this being filled
-              with some actual content.
+              <ul class="list-unstyled">
+                <li><a class="dropdown-item my-4" href="#">Action</a></li>
+                <li><a class="dropdown-item my-4" href="#">Another action</a></li>
+              </ul>
             </div>
           </div>
         </div>
         <div class="accordion-item">
           <h2 class="accordion-header">
             <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseThree" aria-expanded="false" aria-controls="flush-collapseThree" style="background-color: #f6f6f6;">
-              RESERVATIONS
+              RETOURS
             </button>
           </h2>
           <div id="flush-collapseThree" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
             <div class="accordion-body">
-              Placeholder content for this accordion, which is intended to
-              demonstrate the <code>.accordion-flush</code> class. This is the
-              third item's accordion body. Nothing more exciting happening
-              here in terms of content, but just filling up the space to make
-              it look, at least at first glance, a bit more representative of
-              how this would look in a real-world application.
+              <ul class="list-unstyled">
+                <li><a class="dropdown-item my-4" href="#">Action</a></li>
+                <li><a class="dropdown-item my-4" href="#">Another action</a></li>
+              </ul>
             </div>
           </div>
         </div>
@@ -78,7 +77,7 @@
   </div>
   <div class="col-10" style="margin-left: 18%;">
     <div class="row">
-      <div class="d-flex justify-content-end align-items-center me-5 px-5">
+      <div class="d-flex justify-content-end align-items-center me-5 px-5 py-2">
         <div class="d-flex me-2 w-25" role="search">
           <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" />
           <button class="btn btn-outline-gray" type="submit">
