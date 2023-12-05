@@ -1,3 +1,7 @@
+<?php
+include "../include/connexion.php";
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -33,8 +37,8 @@
           <div id="flush-collapseOne" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
             <div class="accordion-body">
               <ul class="list-unstyled">
-                <li><a class="dropdown-item my-4" href="#">Action</a></li>
-                <li><a class="dropdown-item my-4" href="#">Another</a></li>
+                <li><a class="dropdown-item my-4" href="service_reservations.php">CURRENT RESERVATIONS</a></li>
+                <li><a class="dropdown-item my-4" href="#">RESERVATIONS REQUESTS</a></li>
               </ul>
             </div>
           </div>
@@ -97,6 +101,29 @@
         </div>
       </div>
     </div>
+
+    <div class="container m-5 pt-5">
+      <h1>Hello USER!</h1>
+    </div>
+    <div class="row">
+      <div class="col-md-5">
+        <div class="h-100 p-5 bg-light border rounded-3">
+          <h2>NEW FEATURE</h2>
+          <p>Put your contacts into Groups to access to anyone wery easily</p>
+          <button class="btn btn-outline-secondary" type="button">MY GROUPS</button>
+        </div>
+      </div>
+      <div class="col-md-6 card p-0">
+        <img src="../assets/card-res.jpg" class="card-img">
+        <div class="card-img-overlay text-white " style="margin-top: 100px;">
+          <h5 class="card-title display-6" style="text-shadow: 1px 1px 2px #000000;">Card title</h5>
+          <p class="card-text" style="text-shadow: 2px 2px 3px #000000;">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+          <p class="card-text" style="text-shadow: 2px 2px 3px #000000;"><small>Last updated 3 mins ago</small></p>
+        </div>
+      </div>
+    </div>
+
+
   </div>
 
 
