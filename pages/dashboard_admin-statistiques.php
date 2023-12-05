@@ -1,3 +1,6 @@
+<?php
+include('../include/connexion.php');
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -9,7 +12,7 @@
   <link href="https://fonts.googleapis.com/css?family=Poppins" rel="stylesheet" />
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous" />
-
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
   <style>
     body {
       font-family: "Poppins";
@@ -33,8 +36,8 @@
           <div id="flush-collapseOne" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
             <div class="accordion-body">
             <ul class="list-unstyled">
-            <li><a class="dropdown-item my-4" href="#">liste des hotel</a></li>
-            <li><a class="dropdown-item my-4" href="dashboard_admin-statistiques.php">statistiques</a></li>
+                <li><a class="dropdown-item my-4" href="#">liste des hotel</a></li>
+                <li><a class="dropdown-item my-4" href="#">statistiques</a></li>
                
               </ul>
             </div>
@@ -113,11 +116,33 @@
       </div>
     </div>
     
-  </div>
+ 
+  <div class="container  w-75">
+  <canvas id="myChart"></canvas>
+</div>
+</div>
+<script>
+  const ctx = document.getElementById('myChart');
 
-
-  
-
+  new Chart(ctx, {
+    type: 'bar',
+    data: {
+      labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
+      datasets: [{
+        label: '# of Votes',
+        data: [12, 19, 3, 5, 2, 3],
+        borderWidth: 1
+      }]
+    },
+    options: {
+      scales: {
+        y: {
+          beginAtZero: true
+        }
+      }
+    }
+  });
+</script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
 </body>
 

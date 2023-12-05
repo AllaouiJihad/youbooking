@@ -1,3 +1,6 @@
+<?php
+include('../include/connexion.php');
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -7,6 +10,7 @@
   <title>YouHotels</title>
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
   <link href="https://fonts.googleapis.com/css?family=Poppins" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous" />
 
@@ -32,10 +36,9 @@
           </h2>
           <div id="flush-collapseOne" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
             <div class="accordion-body">
-            <ul class="list-unstyled">
-            <li><a class="dropdown-item my-4" href="#">liste des hotel</a></li>
-            <li><a class="dropdown-item my-4" href="dashboard_admin-statistiques.php">statistiques</a></li>
-               
+              <ul class="list-unstyled">
+              <li><a class="dropdown-item my-4" href="#">liste des hotel</a></li>
+              <li><a class="dropdown-item my-4" href="dashboard_admin-statistiques.php">statistiques</a></li>
               </ul>
             </div>
           </div>
@@ -48,8 +51,8 @@
           </h2>
           <div id="flush-collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
             <div class="accordion-body">
-            <ul class="list-unstyled">
-            <li><a class="dropdown-item my-4" href="dashboard_admin-client.php">clients</a></li>
+              <ul class="list-unstyled">
+              <li><a class="dropdown-item my-4" href="dashboard_admin-client.php">clients</a></li>
                 <li><a class="dropdown-item my-4" href="dashboard_admin-proprietaire.php">proprietaire</a></li>
                 <li><a class="dropdown-item my-4" href="dashboard_admin-responsabl.php">responsable</a></li>
               </ul>
@@ -64,8 +67,9 @@
           </h2>
           <div id="flush-collapseThree" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
             <div class="accordion-body">
-            <ul class="list-unstyled">
-                <li><a class="dropdown-item my-4" href="#">reserver</a></li>
+              <ul class="list-unstyled">
+                <li><a class="dropdown-item my-4" href="#">Action</a></li>
+                <li><a class="dropdown-item my-4" href="#">Another action</a></li>
               </ul>
             </div>
           </div>
@@ -78,8 +82,9 @@
           </h2>
           <div id="flush-collapseFour" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
             <div class="accordion-body">
-            <ul class="list-unstyled">
-                <li><a class="dropdown-item my-4" href="#">confermer requests</a></li>
+              <ul class="list-unstyled">
+                <li><a class="dropdown-item my-4" href="#">Action</a></li>
+                <li><a class="dropdown-item my-4" href="#">Another action</a></li>
               </ul>
             </div>
           </div>
@@ -112,11 +117,61 @@
         </div>
       </div>
     </div>
-    
+    <div class="container mt-4">
+      <div class="row">
+        <div class="col">
+          <div class="card">
+            <div class="card-header">
+              <h2 class="display-6 text-center"> responsable</h2>
+            </div>
+            <div class="card-body">
+              <table class="table table-bordered text-center">
+                <tr class="bg-dark border border-3  text-white">
+                  <td>id</td>
+                  <td>firstname</td>
+                  <td>lastname</td>
+                  <td>birthdate</td>
+                  <td>email</td>
+                  <td>phone</td>
+                  <td>gender</td>
+                  <td>action</td>
+                </tr>
+                <?php
+                
+                $query = "SELECT * FROM users where id_role=2 ";
+                $result = mysqli_query($conn, $query);
+                if ($result) {
+                  while ($row = mysqli_fetch_assoc($result)) {
+
+                ?>
+                    <tr>
+                      <td> <?= $row['id'] ?> </td>
+                      <td> <?= $row['firstname'] ?> </td>
+                      <td> <?= $row['lastname'] ?> </td>
+                      <td> <?= $row['birthdate'] ?> </td>
+                      <td> <?= $row['email'] ?> </td>
+                      <td> <?= $row['phone'] ?> </td>
+                      <td> <?= $row['gender'] ?> </td>
+                      <td> <a class="fa-solid fa-trash" href="delete.php?id= <?= $row['id'] ?>"></a>
+                        <button type="button" class="fa-solid fa-pen-to-square" data-bs-toggle="modal" data-bs-target="#staticBackdrop<?= $row['id'] ?>">
+                        </button>
+                      </td>
+
+                    </tr>
+                <?php
+                  }
+                }
+                ?>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 
 
-  
+
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
 </body>
