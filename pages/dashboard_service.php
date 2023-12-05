@@ -1,3 +1,7 @@
+<?php
+include "../include/connexion.php";
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -33,8 +37,8 @@
           <div id="flush-collapseOne" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
             <div class="accordion-body">
               <ul class="list-unstyled">
-                <li><a class="dropdown-item my-4" href="#">Action</a></li>
-                <li><a class="dropdown-item my-4" href="#">Another</a></li>
+                <li><a class="dropdown-item my-4" href="service_reservations.php">CURRENT RESERVATIONS</a></li>
+                <li><a class="dropdown-item my-4" href="#">RESERVATIONS REQUESTS</a></li>
               </ul>
             </div>
           </div>
@@ -97,6 +101,10 @@
         </div>
       </div>
     </div>
+
+    <div class="container m-5 pt-5">
+      <h1>Hello USER!</h1>
+    </div>
     <div class="row">
       <div class="col-md-5">
         <div class="h-100 p-5 bg-light border rounded-3">
@@ -115,44 +123,7 @@
       </div>
     </div>
 
-    <div class="container my-4">
 
-      <h3>CURRENT RESERVATIONS</h3>
-
-      <?php
-      ?>
-      <table class="table table-hover">
-        <thead>
-          <tr>
-            <th scope="col">#</th>
-            <th scope="col">First</th>
-            <th scope="col">Last</th>
-            <th scope="col">Handle</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <th scope="row">1</th>
-            <td>Mark</td>
-            <td>Otto</td>
-            <td>@mdo</td>
-          </tr>
-          <tr>
-            <th scope="row">2</th>
-            <td>Jacob</td>
-            <td>Thornton</td>
-            <td>@fat</td>
-          </tr>
-          <tr>
-            <th scope="row">3</th>
-            <td colspan="2">Larry the Bird</td>
-            <td>@twitter</td>
-          </tr>
-        </tbody>
-      </table>
-
-
-    </div>
   </div>
 
 
