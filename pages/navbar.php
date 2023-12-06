@@ -1,3 +1,8 @@
+<?php 
+include 'connexion.php';  
+session_start();
+if(isset($_SESSION['']))
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -21,10 +26,12 @@
   href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/7.0.0/mdb.min.css"
   rel="stylesheet"
 />
-
-<!-- Optional theme -->
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+<link rel="stylesheet" href="https://unpkg.com/flickity@2.0/dist/flickity.min.css">
+<script src="https://unpkg.com/flickity@2.0/dist/flickity.pkgd.min.js"></script>
 
 <link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="desc.css">
 </head>
 <body>
 <!-- Navbar -->
@@ -50,12 +57,14 @@
       </ul>
       <!-- Left links -->
       <div class="d-flex align-items-center">
+        <a href="login.php">
       <button data-mdb-ripple-init type="button" class="btn me-3 gold">
          login
-        </button>
-        <button data-mdb-ripple-init type="button" class="btn me-3 gold">
+        </button></a>
+        <a href="signup.php">
+        <button data-mdb-ripple-init type="button" class="btn me-3 gold" data-toggle="modal" data-target="#exampleModalCenter">
           Sign up for free
-        </button>
+        </button></a>
       </div>
     </div>
     <!-- Collapsible wrapper -->
