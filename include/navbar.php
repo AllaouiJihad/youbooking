@@ -34,9 +34,9 @@
     <!-- Navbar brand -->
     <a class="navbar-brand me-2" href="../index.php">
       <img
-        src="./logo.png"
+        src="../assets/logo.png"
         height="40"
-        alt="MDB Logo"
+        alt="youbooking"
         loading="lazy"
         style="margin-top: -1px;"
       />
