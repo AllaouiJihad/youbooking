@@ -1,5 +1,5 @@
 <?php
-include('../include/navbar.php');
+include('./include/navbar.php');
 ?>
 <!-- Navbar -->
 <div class="px-4 py-5  text-center back h-75">
@@ -30,7 +30,7 @@ include('../include/navbar.php');
     <div class="carousel-cell  ">
       <h3>Product 1</h3>
       <a class="more" href="">Explore more</a>
-      <img src="./img1.jpg" />
+      <img src="../assets/hotelpreview.jpg" />
       <div class="line"></div>
       <div class="price">
         <span>225<sup>€</sup></span>
@@ -39,7 +39,7 @@ include('../include/navbar.php');
     <div class="carousel-cell  imag ">
       <h3>Product 2</h3>
       <a class="more" href="">Explore more</a>
-      <img src="../assets/hotelpreview.jpg.jpg" />
+      <img src="./assets/hotelpreview.jpg" />
       <div class="line"></div>
       <div class="price">
         <span>225<sup>€</sup></span>
@@ -48,7 +48,7 @@ include('../include/navbar.php');
     <div class="carousel-cell  imag ">
       <h3>Product 2</h3>
       <a class="more" href="">Explore more</a>
-      <img src="../assets/hotelpreview.jpg.jpg" />
+      <img src="./assets/hotelpreview.jpg" />
       <div class="line"></div>
       <div class="price">
         <span>225<sup>€</sup></span>
@@ -57,7 +57,7 @@ include('../include/navbar.php');
     <div class="carousel-cell  imag ">
       <h3>Product 2</h3>
       <a class="more" href="">Explore more</a>
-      <img src="../assets/hotelpreview.jpg.jpg" />
+      <img src="./assets/hotelpreview.jpg" />
       <div class="line"></div>
       <div class="price">
         <span>225<sup>€</sup></span>
@@ -66,7 +66,7 @@ include('../include/navbar.php');
     <div class="carousel-cell  imag">
       <h3>Product 3</h3>
       <a class="more" href="">Explore more</a>
-      <img src="../assets/hotelpreview.jpg.jpg" />
+      <img src="./assets/hotelpreview.jpg" />
       <div class="line"></div>
       <div class="price">
         <span>225<sup>€</sup></span>
@@ -91,7 +91,7 @@ include('../include/navbar.php');
 
             <div class="d-flex justify-content-between">
               <div class="d-flex flex-row align-items-center">
-                <img src="../assets/comment.jpg.jpeg" alt="avatar" width="25"
+                <img src="./assets/comment.jpeg" alt="avatar" width="25"
                   height="25" />
                 <p class="small mb-0 ms-2">Martha</p>
               </div>
@@ -110,7 +110,7 @@ include('../include/navbar.php');
 
             <div class="d-flex justify-content-between">
               <div class="d-flex flex-row align-items-center">
-                <img src="../assets/comment.jpg.jpeg" alt="avatar" width="25"
+                <img src="./assets/comment.jpeg" alt="avatar" width="25"
                   height="25" />
                 <p class="small mb-0 ms-2">Johny</p>
               </div>
@@ -129,7 +129,7 @@ include('../include/navbar.php');
 
             <div class="d-flex justify-content-between">
               <div class="d-flex flex-row align-items-center">
-                <img src="../assets/comment.jpg.jpeg" alt="avatar" width="25"
+                <img src="./assets/comment.jpeg" alt="avatar" width="25"
                   height="25" />
                 <p class="small mb-0 ms-2">Mary Kate</p>
               </div>
@@ -148,7 +148,7 @@ include('../include/navbar.php');
 
             <div class="d-flex justify-content-between">
               <div class="d-flex flex-row align-items-center">
-                <img src="../assets/comment.jpg.jpeg" alt="avatar" width="25"
+                <img src="./assets/comment.jpeg" alt="avatar" width="25"
                   height="25" />
                 <p class="small mb-0 ms-2">Johny</p>
               </div>
@@ -164,5 +164,5 @@ include('../include/navbar.php');
   </div>
 </div>
 <?php
-include '../include/footer.php';
+include './include/footer.php';
 ?>
