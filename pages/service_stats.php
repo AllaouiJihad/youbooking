@@ -67,8 +67,8 @@ include "../include/connexion.php";
           <div id="flush-collapseThree" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
             <div class="accordion-body">
               <ul class="list-unstyled">
+              <li><a class="dropdown-item my-4" href="services_feedback.php">CLIENTS FEEDBACKS</a></li>
                 <li><a class="dropdown-item my-4" href="service_retours.php">CONFIRMED INVOICES</a></li>
-                <li><a class="dropdown-item my-4" href="#">ONHOLD INVOICES</a></li>
               </ul>
             </div>
           </div>
