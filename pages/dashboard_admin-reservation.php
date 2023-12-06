@@ -33,8 +33,8 @@
           <div id="flush-collapseOne" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
             <div class="accordion-body">
             <ul class="list-unstyled">
-            <li><a class="dropdown-item my-4" href="#">liste des hotel</a></li>
-            <li><a class="dropdown-item my-4" href="dashboard_admin-statistiques.php">statistiques</a></li>
+            <li><a class="dropdown-item my-4" href="dashboard_admin-hotels.php">liste des hotel</a></li>
+           
                
               </ul>
             </div>
@@ -79,7 +79,7 @@
           <div id="flush-collapseFour" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
             <div class="accordion-body">
             <ul class="list-unstyled">
-                <li><a class="dropdown-item my-4" href="#">confermer requests</a></li>
+            <li><a class="dropdown-item my-4" href="dashboard_admin-request.php">confermer requests</a></li>
               </ul>
             </div>
           </div>

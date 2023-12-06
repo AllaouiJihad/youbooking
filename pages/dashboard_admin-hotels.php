@@ -1,3 +1,6 @@
+<?php
+include('../include/connexion.php');
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -34,7 +37,7 @@
             <div class="accordion-body">
             <ul class="list-unstyled">
             <li><a class="dropdown-item my-4" href="#">liste des hotel</a></li>
-            <li><a class="dropdown-item my-4" href="dashboard_admin-statistiques.php">statistiques</a></li>
+            
                
               </ul>
             </div>
@@ -79,7 +82,7 @@
           <div id="flush-collapseFour" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
             <div class="accordion-body">
             <ul class="list-unstyled">
-                <li><a class="dropdown-item my-4" href="#">confermer requests</a></li>
+                <li><a class="dropdown-item my-4" href="dashboard_admin-request.php">confermer requests</a></li>
               </ul>
             </div>
           </div>
@@ -112,7 +115,53 @@
         </div>
       </div>
     </div>
-    
+    <div class="container mt-4">
+      <div class="row">
+        <div class="col">
+          <div class="card">
+            <div class="card-header">
+              <h2 class="display-6 text-center"> hotels</h2>
+            </div>
+            <div class="card-body">
+              <table class="table table-bordered text-center">
+                <tr class="bg-dark border border-3  text-white">
+                  <td>id</td>
+                  <td>name</td>
+                  <td>category</td>
+                  <td>description</td>
+                  
+                  <td>firstname</td>
+                  <td>lastname</td>
+                </tr>
+                <?php
+                
+                $query = " SELECT hotel.*, users.firstname, users.lastname FROM `hotel` JOIN users on users.id=hotel.idproprietaire where hotel.request=1; ";
+                $result = mysqli_query($conn, $query);
+                if ($result) {
+                  while ($row = mysqli_fetch_assoc($result)) {
+
+                ?>
+                    <tr>
+                      <td> <?= $row['id'] ?> </td>
+                      <td> <?= $row['name'] ?> </td>
+                      <td> <?= $row['category'] ?> </td>
+                      <td> <?= $row['description'] ?> </td>
+                      <td> <?= $row['firstname'] ?> </td>
+                      <td> <?= $row['lastname'] ?> </td>
+                     
+
+                    </tr>
+                    
+                <?php
+                  }
+                }
+                ?>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+     </di>
   </div>
 
 

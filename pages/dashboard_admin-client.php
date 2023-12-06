@@ -37,8 +37,7 @@ include('../include/connexion.php');
           <div id="flush-collapseOne" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
             <div class="accordion-body">
               <ul class="list-unstyled">
-              <li><a class="dropdown-item my-4" href="#">liste des hotel</a></li>
-                <li><a class="dropdown-item my-4" href="dashboard_admin-statistiques.php">statistiques</a></li>
+              <li><a class="dropdown-item my-4" href="dashboard_admin-hotels.php">liste des hotel</a></li>
               </ul>
             </div>
           </div>
@@ -83,8 +82,8 @@ include('../include/connexion.php');
           <div id="flush-collapseFour" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
             <div class="accordion-body">
               <ul class="list-unstyled">
-                <li><a class="dropdown-item my-4" href="#">Action</a></li>
-                <li><a class="dropdown-item my-4" href="#">Another action</a></li>
+              <li><a class="dropdown-item my-4" href="dashboard_admin-request.php">confermer requests</a></li>
+               
               </ul>
             </div>
           </div>
@@ -134,7 +133,6 @@ include('../include/connexion.php');
                   <td>email</td>
                   <td>phone</td>
                   <td>gender</td>
-                  <td>action</td>
                 </tr>
                 <?php
                 
@@ -152,10 +150,7 @@ include('../include/connexion.php');
                       <td> <?= $row['email'] ?> </td>
                       <td> <?= $row['phone'] ?> </td>
                       <td> <?= $row['gender'] ?> </td>
-                      <td> <a class="fa-solid fa-trash" href="delete.php?id= <?= $row['id'] ?>"></a>
-                        <button type="button" class="fa-solid fa-pen-to-square" data-bs-toggle="modal" data-bs-target="#staticBackdrop<?= $row['id'] ?>">
-                        </button>
-                      </td>
+                     
 
                     </tr>
                     
