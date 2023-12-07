@@ -1,7 +1,9 @@
 <?php
-$conn = mysqli_connect('http://172.16.10.221:80', 'root', '', 'youhotels');
+$conn = mysqli_connect('localhost', 'root', '', 'you_booking');
 
  if (!$conn) {
     die("Connection failed: " . mysqli_connect_error());
    }
+//   echo "Connected successfully";
+?>
 
