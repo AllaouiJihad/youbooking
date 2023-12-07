@@ -216,13 +216,15 @@ if(isset($_POST['submit'])){
   $result=mysqli_query($conn,$sql);
   if($result){
     session_start();
-    $sql="select id from users where email='$email'";
+    $sql="select * from users where email='$email'";
     $result=mysqli_query($conn,$sql);
     while($res=mysqli_fetch_assoc($result)){
       $_SESSION['id']=$res['id'];
+      $_SESSION['role']=$res['id_role'];
     }
     header('location: ../index.php');
   }else{
+    
     header('refresh:1');
   }
 }

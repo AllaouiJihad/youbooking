@@ -27,51 +27,20 @@ include('./include/navbar.php');
   
   <div class="carousel-wrapper ">
   <div class="carousel" data-flickity>
-    <div class="carousel-cell  ">
-      <h3>Product 1</h3>
-      <a class="more" href="">Explore more</a>
-      <img src="../assets/hotelpreview.jpg" />
-      <div class="line"></div>
-      <div class="price">
-        <span>225<sup>€</sup></span>
-      </div>
-    </div>
-    <div class="carousel-cell  imag ">
-      <h3>Product 2</h3>
-      <a class="more" href="">Explore more</a>
+    <?php
+    $sfl="select * from hotel";
+    $result=mysqli_query($conn,$sfl);
+    while($rows=mysqli_fetch_assoc($result)){
+    ?>
+        <div class="carousel-cell  imag ">
+      <h3><?=$rows['name']?></h3>
+      <a class="more" href="./pages/description.php?id=<?=$rows['id']?>">Explore more</a>
       <img src="./assets/hotelpreview.jpg" />
       <div class="line"></div>
-      <div class="price">
-        <span>225<sup>€</sup></span>
-      </div>
-    </div>
-    <div class="carousel-cell  imag ">
-      <h3>Product 2</h3>
-      <a class="more" href="">Explore more</a>
-      <img src="./assets/hotelpreview.jpg" />
-      <div class="line"></div>
-      <div class="price">
-        <span>225<sup>€</sup></span>
-      </div>
-    </div>
-    <div class="carousel-cell  imag ">
-      <h3>Product 2</h3>
-      <a class="more" href="">Explore more</a>
-      <img src="./assets/hotelpreview.jpg" />
-      <div class="line"></div>
-      <div class="price">
-        <span>225<sup>€</sup></span>
-      </div>
-    </div>
-    <div class="carousel-cell  imag">
-      <h3>Product 3</h3>
-      <a class="more" href="">Explore more</a>
-      <img src="./assets/hotelpreview.jpg" />
-      <div class="line"></div>
-      <div class="price">
-        <span>225<sup>€</sup></span>
-      </div>
-    </div>
+    </div><?php }
+    ?>
+
+    
   </div>
 </div>
 <!-- comments -->

@@ -28,10 +28,14 @@
   href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/7.0.0/mdb.min.css"
   rel="stylesheet"
   />
-  
+  <link rel="stylesheet" href="https://unpkg.com/flickity@2.2.2/dist/flickity.min.css" />
+<script src="https://unpkg.com/flickity@2.2.2/dist/flickity.pkgd.min.js"></script>
+
   <!-- Optional theme -->
   
   <link rel="stylesheet" href="../../youbooking/pages/style.css">
+  <link rel="stylesheet" href="../../youbooking/pages/desc.css">
+
 </head>
 <body>
 <!-- Navbar -->
@@ -67,7 +71,7 @@ $sql="select * from users where id='$id'";
 $res=mysqli_query($conn,$sql);
 while($rws=mysqli_fetch_assoc($res)){
   ?>
-    <a class="btn btn-secondary me-2" href="../pages/reqest.php" type="button">become a owner</a>
+    <a class="btn btn-secondary me-2" href="../../youbooking/pages/request_proprietair.php" type="button">become a owner</a>
   </button>
   <div class="dropdown">
   <button class="btn btn-secondary dropdown-toggle " type="button" data-bs-toggle="dropdown" aria-expanded="false">
