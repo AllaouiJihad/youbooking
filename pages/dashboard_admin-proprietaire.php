@@ -1,3 +1,6 @@
+<?php
+include('../include/connexion.php');
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -7,6 +10,7 @@
   <title>YouHotels</title>
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
   <link href="https://fonts.googleapis.com/css?family=Poppins" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous" />
 
@@ -32,9 +36,9 @@
           </h2>
           <div id="flush-collapseOne" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
             <div class="accordion-body">
-            <ul class="list-unstyled">
-                <li><a class="dropdown-item my-4" href="#">Action</a></li>
-                <li><a class="dropdown-item my-4" href="#">Another action</a></li>
+              <ul class="list-unstyled">
+              <li><a class="dropdown-item my-4" href="dashboard_admin-hotels.php">liste des hotel</a></li>
+             
               </ul>
             </div>
           </div>
@@ -47,9 +51,10 @@
           </h2>
           <div id="flush-collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
             <div class="accordion-body">
-            <ul class="list-unstyled">
-                <li><a class="dropdown-item my-4" href="#">Action</a></li>
-                <li><a class="dropdown-item my-4" href="#">Another action</a></li>
+              <ul class="list-unstyled">
+              <li><a class="dropdown-item my-4" href="dashboard_admin-client.php">clients</a></li>
+                <li><a class="dropdown-item my-4" href="dashboard_admin-proprietaire.php">proprietaire</a></li>
+                <li><a class="dropdown-item my-4" href="dashboard_admin-responsabl.php">responsable</a></li>
               </ul>
             </div>
           </div>
@@ -62,7 +67,7 @@
           </h2>
           <div id="flush-collapseThree" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
             <div class="accordion-body">
-            <ul class="list-unstyled">
+              <ul class="list-unstyled">
                 <li><a class="dropdown-item my-4" href="#">Action</a></li>
                 <li><a class="dropdown-item my-4" href="#">Another action</a></li>
               </ul>
@@ -71,15 +76,14 @@
         </div>
         <div class="accordion-item">
           <h2 class="accordion-header">
-            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseThree" aria-expanded="false" aria-controls="flush-collapseThree" style="background-color: #f6f6f6;">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseFour" aria-expanded="false" aria-controls="flush-collapseFour" style="background-color: #f6f6f6;">
               REQUEST
             </button>
           </h2>
-          <div id="flush-collapseThree" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+          <div id="flush-collapseFour" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
             <div class="accordion-body">
-            <ul class="list-unstyled">
-                <li><a class="dropdown-item my-4" href="#">Action</a></li>
-                <li><a class="dropdown-item my-4" href="#">Another action</a></li>
+              <ul class="list-unstyled">
+              <li><a class="dropdown-item my-4" href="dashboard_admin-request.php">confermer requests</a></li>
               </ul>
             </div>
           </div>
@@ -117,7 +121,7 @@
         <div class="col">
           <div class="card">
             <div class="card-header">
-              <h2 class="display-6 text-center"> utilisateur</h2>
+              <h2 class="display-6 text-center"> proprietaire</h2>
             </div>
             <div class="card-body">
               <table class="table table-bordered text-center">
@@ -129,8 +133,31 @@
                   <td>email</td>
                   <td>phone</td>
                   <td>gender</td>
-                  <td>id-role</td>
+               
                 </tr>
+                <?php
+                
+                $query = "SELECT * FROM users where id_role=3 ";
+                $result = mysqli_query($conn, $query);
+                if ($result) {
+                  while ($row = mysqli_fetch_assoc($result)) {
+
+                ?>
+                    <tr>
+                      <td> <?= $row['id'] ?> </td>
+                      <td> <?= $row['firstname'] ?> </td>
+                      <td> <?= $row['lastname'] ?> </td>
+                      <td> <?= $row['birthdate'] ?> </td>
+                      <td> <?= $row['email'] ?> </td>
+                      <td> <?= $row['phone'] ?> </td>
+                      <td> <?= $row['gender'] ?> </td>
+                     
+
+                    </tr>
+                <?php
+                  }
+                }
+                ?>
               </table>
             </div>
           </div>
@@ -140,7 +167,7 @@
   </div>
 
 
-  
+
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
 </body>

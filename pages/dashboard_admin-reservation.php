@@ -33,8 +33,9 @@
           <div id="flush-collapseOne" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
             <div class="accordion-body">
             <ul class="list-unstyled">
-                <li><a class="dropdown-item my-4" href="#">Action</a></li>
-                <li><a class="dropdown-item my-4" href="#">Another action</a></li>
+            <li><a class="dropdown-item my-4" href="dashboard_admin-hotels.php">liste des hotel</a></li>
+           
+               
               </ul>
             </div>
           </div>
@@ -48,8 +49,9 @@
           <div id="flush-collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
             <div class="accordion-body">
             <ul class="list-unstyled">
-                <li><a class="dropdown-item my-4" href="#">Action</a></li>
-                <li><a class="dropdown-item my-4" href="#">Another action</a></li>
+            <li><a class="dropdown-item my-4" href="dashboard_admin-client.php">clients</a></li>
+                <li><a class="dropdown-item my-4" href="dashboard_admin-proprietaire.php">proprietaire</a></li>
+                <li><a class="dropdown-item my-4" href="dashboard_admin-responsabl.php">responsable</a></li>
               </ul>
             </div>
           </div>
@@ -63,23 +65,21 @@
           <div id="flush-collapseThree" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
             <div class="accordion-body">
             <ul class="list-unstyled">
-                <li><a class="dropdown-item my-4" href="#">Action</a></li>
-                <li><a class="dropdown-item my-4" href="#">Another action</a></li>
+                <li><a class="dropdown-item my-4" href="#">reserver</a></li>
               </ul>
             </div>
           </div>
         </div>
         <div class="accordion-item">
           <h2 class="accordion-header">
-            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseThree" aria-expanded="false" aria-controls="flush-collapseThree" style="background-color: #f6f6f6;">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseFour" aria-expanded="false" aria-controls="flush-collapseFour" style="background-color: #f6f6f6;">
               REQUEST
             </button>
           </h2>
-          <div id="flush-collapseThree" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+          <div id="flush-collapseFour" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
             <div class="accordion-body">
             <ul class="list-unstyled">
-                <li><a class="dropdown-item my-4" href="#">Action</a></li>
-                <li><a class="dropdown-item my-4" href="#">Another action</a></li>
+            <li><a class="dropdown-item my-4" href="dashboard_admin-request.php">confermer requests</a></li>
               </ul>
             </div>
           </div>
@@ -112,7 +112,7 @@
         </div>
       </div>
     </div>
- 
+    
   </div>
 
 

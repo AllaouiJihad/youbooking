@@ -1,5 +1,5 @@
 <?php
-include 'connexion.php';
+include '../include/connexion.php';
 ?>
 
 <!DOCTYPE html>
@@ -193,10 +193,10 @@ body {
 }
 
 
-::-webkit-datetime-edit-text { display: none; }
+/* ::-webkit-datetime-edit-text { display: none; }
 ::-webkit-datetime-edit-month-field { display: none; }
 ::-webkit-datetime-edit-day-field { display: none; }
-::-webkit-datetime-edit-year-field { display: none;}
+::-webkit-datetime-edit-year-field { display: none;} */
 ::-webkit-inner-spin-button { display: none; }
 
 
@@ -208,12 +208,23 @@ if(isset($_POST['submit'])){
   $pwd=$_POST['password'];
   $email=$_POST['email'];
   $phone=$_POST['phone'];
+  $last=$_POST['lastname'];
+  $birth=$_POST['birth'];
+  $gender=$_POST['gender'];
+  
   $sql="insert into users VALUES (null,'$username','$last','$birth','$email','$phone','$gender','$pwd',4)";
   $result=mysqli_query($conn,$sql);
   if($result){
     session_start();
-    $_SESSION['email']=$email;
+    $sql="select * from users where email='$email'";
+    $result=mysqli_query($conn,$sql);
+    while($res=mysqli_fetch_assoc($result)){
+      $_SESSION['id']=$res['id'];
+      $_SESSION['role']=$res['id_role'];
+    }
+    header('location: ../index.php');
   }else{
+    
     header('refresh:1');
   }
 }
@@ -223,38 +234,38 @@ if(isset($_POST['submit'])){
 <body>
     
 <div class="login-box">
-  <h2>Login</h2>
+  <h2>register</h2>
   <form method="POST">
     <div class="user-box">
-      <input type="text" name="" required="" name="username">
+      <input type="text"  required="" name="username">
       <label>Username</label>
     </div>
     <div class="user-box">
-      <input type="text" name="" required="" name="lastname">
+      <input type="text"  required="" name="lastname">
       <label>lastname</label>
     </div>
     <div class="user-box">
-      <input type="email" name="email" required="" name="email">
+      <input type="email"  required="" name="email">
       <label>Email</label>
     </div>
     <div class="user-box">
-      <input type="number" name="" required="" name="phone">
+      <input type="number" required="" name="phone">
       <label>Phone number</label>
     </div>
     <div class="user-box">
-      <input type="date" name="" required="" name="birth">
+      <input type="date"  required="" name="birth">
       <label>date of birth</label>
     </div>
     <div class="user-box">
-      <input type="password" name="" required="" name="password">
+      <input type="password"  required="" name="password">
       <label>Password</label>
     </div>
     <div class="user-box">
-      <input type="password" name="" required="">
+      <input type="password"  required="">
       <label>Verfiy Password</label>
     </div>
     <div class="user-box">
-      <input type="text" name="" required="" name="gender">
+      <input type="text"  required="" name="gender">
       <label>gender</label>
     </div>
     <button type="submit" name="submit"  class="sub">

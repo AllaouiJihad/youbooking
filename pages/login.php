@@ -178,17 +178,44 @@ body {
 
     </style>
 </head>
+<?php
+include '../include/connexion.php';
+if(isset($_POST['submit'])){
+  $email=$_POST['email'];
+  $pwd=$_POST['pwd'];
+
+$sql="select * from users where email='$email' and password='$pwd'";
+$result=mysqli_query($conn,$sql);
+
+if($result){
+  session_start();
+  while($row=mysqli_fetch_assoc($result)){
+$_SESSION['id']=$row['id'];
+$_SESSION['role']=$res['id_role'];
+  if($row['id_role']==1){
+    header('location:./dashboard_admin-hotels.php');
+  }elseif($row['id_role']==2){
+    header('location:./dashboard_service.php');
+  }elseif($row['id_role']==3){
+    header('location:./dashboard_proprietaire.php');
+  }else{
+    header('location: ../index.php');
+  }
+}
+}
+}
+?>
 <body>
 
 <div class="login-box">
   <h2>Login</h2>
-  <form>
+  <form method="POST">
     <div class="user-box">
-      <input type="text" name="" required="">
-      <label>Username</label>
+      <input type="email" name="email" required="">
+      <label>email</label>
     </div>
     <div class="user-box">
-      <input type="password" name="" required="">
+      <input type="password" name="pwd" required="">
       <label>Password</label>
     </div>
     <button type="submit" name="submit" class="sub">

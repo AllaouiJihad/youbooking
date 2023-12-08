@@ -1,3 +1,15 @@
+
+<?php
+session_start();
+$role=$_SESSION['role'];
+$idu=$_SESSION['id'];
+if($role!=3){
+  header('location:../../youbooking/index.php');
+}
+$sql="select * from users where id ='$idu'";
+while($req=mysqli_fetch_assoc(mysqli_query($conn,$sql))){
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -36,6 +48,20 @@
             </div>
           </div>
         </div>
+
+        <div class="accordion-item">
+          <h2 class="accordion-header">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse1" aria-expanded="false" aria-controls="flush-collapseTwo" style="background-color: #f6f6f6;">
+              RESPONSABLE SERVICE
+            </button>
+          </h2>
+          <div id="flush-collapse1" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+            <div class="accordion-body">
+              <a href="add_responsable.php">Add responsable</a>
+            </div>
+          </div>
+        </div>
+        
         <div class="accordion-item">
           <h2 class="accordion-header">
             <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo" style="background-color: #f6f6f6;">
@@ -78,7 +104,7 @@
 
         <div class="dropdown">
           <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-            USER
+            <?=$req['firstname']?>
           </button>
           <ul class="dropdown-menu">
             <li><a class="dropdown-item" href="#">Action</a></li>
@@ -94,5 +120,7 @@
   </div>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
 </body>
-
+<?php 
+}
+?>
 </html>

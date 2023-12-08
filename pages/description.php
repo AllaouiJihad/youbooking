@@ -11,13 +11,13 @@ while($row=mysqli_fetch_assoc($result)){
         <div class="row g-0">
             <div class="col-md-6 border-end">
                 <div class="d-flex flex-column justify-content-center">
-                    <div class="main_image"> <img src="../assets/hotelpreview.jpg.jpg" id="main_product_image" width="350"> </div>
+                    <div class="main_image"> <img src="../assets/hotelpreview.jpg" id="main_product_image" width="350"> </div>
                     <div class="thumbnail_images">
                         <ul id="thumbnail">
-                            <li><img onclick="changeImage(this)" src="../assets/hotelpreview.jpg.jpg" width="70"></li>
-                            <li><img onclick="changeImage(this)" src="../assets/hotelpreview.jpg.jpg" width="70"></li>
-                            <li><img onclick="changeImage(this)" src="../assets/hotelpreview.jpg.jpg" width="70"></li>
-                            <li><img onclick="changeImage(this)" src="../assets/hotelpreview.jpg.jpg" width="70"></li>
+                            <li><img onclick="changeImage(this)" src="../assets/hotelpreview.jpg" width="70"></li>
+                            <li><img onclick="changeImage(this)" src="../assets/hotelpreview.jpg" width="70"></li>
+                            <li><img onclick="changeImage(this)" src="../assets/hotelpreview.jpg" width="70"></li>
+                            <li><img onclick="changeImage(this)" src="../assets/hotelpreview.jpg" width="70"></li>
                         </ul>
                     </div>
                 </div>
@@ -43,7 +43,7 @@ while($row=mysqli_fetch_assoc($result)){
                             </ul>
                         </div>
                     </div>
-                    <div class="buttons d-flex flex-row mt-5 gap-3"> <button class="btn btn-outline-dark">reserver une chambre</button></div>
+                    <div class="buttons d-flex flex-row mt-5 gap-3"> <a href="reservation_form.php?id=<?=$row['id']?>"><button class="btn btn-outline-dark">reserver une chambre</button></a></div>
                     <div class="search-option"> <i class='bx bx-search-alt-2 first-search'></i>
                         <div class="inputs"> <input type="text" name=""> </div><p>Feedback</p><i class='bx bx-share-alt share'></i>
                     </div>

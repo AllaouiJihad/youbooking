@@ -1,15 +1,19 @@
+<?php
+include '../include\connexion.php';
+?>
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8" />
+<meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>YouHotels</title>
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
   <link href="https://fonts.googleapis.com/css?family=Poppins" rel="stylesheet" />
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous" />
-
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
   <style>
     body {
       font-family: "Poppins";
@@ -33,6 +37,18 @@
           <div id="flush-collapseOne" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
             <div class="accordion-body">
               <a href="../index.php">Home page</a>
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <h2 class="accordion-header">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse1" aria-expanded="false" aria-controls="flush-collapseTwo" style="background-color: #f6f6f6;">
+              RESPONSABLE SERVICE
+            </button>
+          </h2>
+          <div id="flush-collapse1" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+            <div class="accordion-body">
+              <a href="add_responsable.php">Add responsable</a>
             </div>
           </div>
         </div>
@@ -88,11 +104,124 @@
         </div>
       </div>
     </div>
+  
+
+  <div class="container col-10 mt-4">
+      <div class="row">
+        <div class="col">
+          <div class="card">
+            <div class="card-header">
+              <h2 class="display-6 text-center"> RESERVATION CONFIRMATION</h2>
+            </div>
+            <div class="card-body">
+              <table class="table table-bordered text-center">
+                <tr class="bg-dark border border-3  text-white">
+                  <td>id</td>
+                  <td>checkin</td>
+                  <td>checkout</td>
+                  <td>quantity</td>
+                  <td>action</td>
+                </tr>
+                <?php
+
+                $query = "SELECT reservation.* , room_number.*,room.*,hotel.* FROM reservation JOIN room_number ON reservation.id = room_number.idreservation JOIN room ON room_number.idroom = room.id JOIN hotel ON room.idHotel = hotel.id WHERE hotel.idproprietaire = 1 confirmation = 0; ";
+                $result = mysqli_query($conn, $query);
+                if ($result) {
+                  while ($row = mysqli_fetch_assoc($result)) {
+
+                ?>
+                    <tr>
+                      <td> <?= $row['id'] ?> </td>
+                      <td> <?= $row['checkin'] ?> </td>
+                      <td> <?= $row['checkout'] ?> </td>
+                      <td> <?= $row['quantity'] ?> </td>
+                      <td> 
+                      <a type="button" class="fa-solid fa-x" style="color:#d3a377" data-toggle="modal" data-target="#delete_modal<?= $row['id']?>"></a>
+                      <a type="button" class="fa-solid fa-check" style="color: #000000"; data-toggle="modal" data-target="#update_modal<?= $row['id']?>"></a>
+                      </td>
+
+                    </tr>
+<!-- Modal delete room -->
+<div class="modal fade" id="delete_modal<?php echo $row['id'] ?>" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLongTitle">DELETE ROOM</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+    
+        
+        
+        <form method="post" action="../include\deletereservation.php">
+                <input type="hidden" name="idHotel" value="2">
+                <input type="hidden" name="id" value="<?php echo $row['id'] ?>"/>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="submit" name="delete" class="btn btn-save border border-danger">DELETE</button>
+            </div>
+
+        </form>
+        
+    
+      </div>
+      
+    </div>
   </div>
+</div>
+<!--fin modal delete -->
 
+<!-- Modal update room -->
+<div class="modal fade" id="update_modal<?php echo $row['id'] ?>" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLongTitle">DELETE ROOM</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+    
+        
+        
+        <form method="post" action="../include\deleteroom.php">
+                <input type="hidden" name="idHotel" value="2">
+                <input type="hidden" name="id" value="<?php echo $row['id'] ?>"/>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="submit" name="delete" class="btn btn-save border border-danger">DELETE</button>
+            </div>
 
+        </form>
+        
+    
+      </div>
+      
+    </div>
+  </div>
+</div>
+
+                <?php
+                  }
+                }
+                ?>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    </div>
   </div>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
+
 </body>
 
 </html>

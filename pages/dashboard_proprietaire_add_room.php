@@ -47,6 +47,18 @@ include '../include/connexion.php';
         </div>
         <div class="accordion-item">
           <h2 class="accordion-header">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse1" aria-expanded="false" aria-controls="flush-collapseTwo" style="background-color: #f6f6f6;">
+              RESPONSABLE SERVICE
+            </button>
+          </h2>
+          <div id="flush-collapse1" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+            <div class="accordion-body">
+              <a href="add_responsable.php">Add responsable</a>
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <h2 class="accordion-header">
             <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo" style="background-color: #f6f6f6;">
                ROOMS
             </button>
@@ -130,13 +142,9 @@ include '../include/connexion.php';
                       <td> <?= $row['type'] ?> </td>
                       <td> <?= $row['price'].' DH'; ?> </td>
                       <td> 
-                      <a type="button" class="fa-solid fa-trash" style="color:#d3a377" data-toggle="modal" data-target="#delete_modal<?= $row['id']?>">
-                        
-                      </a>
-                      <a type="button" class="fa-solid fa-pen-to-square border-white bg-white" style="color: #000000"; data-toggle="modal" data-target="#update_modal<?= $row['id']?>">
-                        
-                      </a>
-                  </a>
+                      <a type="button" class="fa-solid fa-trash" style="color:#d3a377" data-toggle="modal" data-target="#delete_modal<?= $row['id']?>"></a>
+                      <a type="button" class="fa-solid fa-pen-to-square border-white bg-white" style="color: #000000"; data-toggle="modal" data-target="#update_modal<?= $row['id']?>"></a>
+                  
                       </td>
 
                     </tr>
